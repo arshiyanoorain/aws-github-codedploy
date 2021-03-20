@@ -1,0 +1,42 @@
+Pipeline 1 
+   |
+10 host sessions
+
+Logic Apps enabeled =rule(non peek hous 5 vms active & 5 non active)
+__________________________________________________________________
+pipeline 2
+   |
+get active session host(so out of 10 only 5 active) - no
+store it in variable ($a)
+   |
+get all 10 session host store in global variable $b (o.1 img)
+   |
+stop the logic app
+   |
+create new 5 vms at this stage 15 are there active(5-0.2 & 10-0.1)
+   |
+enabel Drain mode on $a variable session host (so 5 drain mode & 10vms(in that 5 logic app rules)) maintaining 10 always no
+   |
+notification
+
+__________________________________________________________________
+
+pipeline 3
+
+Start logic Apps
+      |
+wait for 2 hours
+      |
+Stop the vms of $a
+
+     
+__________________________________________________________________
+Pipeline 3 or 4
+
+get details of all 10 vms from $b
+enabel drain mode $b
+
+create 5 vms with update image 0.2 2vms
+impose lock on all 35 vms
+
+delete old vms of all 0.1 imge
